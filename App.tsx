@@ -1,19 +1,21 @@
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import {SafeAreaView} from 'react-native';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {enableFreeze} from 'react-native-screens';
 import {RecoilRoot} from 'recoil';
-import Root from './src/navigation';
+import RootTabs from 'src/navigation';
 
-function App(): JSX.Element {
-  return (
-    <RecoilRoot>
-      <NavigationContainer>
-        <SafeAreaView>
-          <Root />
-        </SafeAreaView>
-      </NavigationContainer>
-    </RecoilRoot>
-  );
-}
+/** ReactNative Screens */
+enableFreeze(true);
+
+const App = () => (
+  <RecoilRoot>
+    <NavigationContainer>
+      <SafeAreaProvider>
+        <RootTabs />
+      </SafeAreaProvider>
+    </NavigationContainer>
+  </RecoilRoot>
+);
 
 export default App;
