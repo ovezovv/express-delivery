@@ -1,9 +1,12 @@
-import React from 'react';
-import {Text, TextInput, View} from 'react-native';
+import React, {useState} from 'react';
+import {Text, View} from 'react-native';
+import MaskInput from 'react-native-mask-input';
 import BackButton from 'src/components/templates/BackButton';
 import styles from 'src/styles';
 
 const LoginScreen = () => {
+  const [phone, setPhone] = useState('');
+
   return (
     <View style={styles.screenContainer}>
       <BackButton onPress={() => console.log('sdf')} />
@@ -12,11 +15,33 @@ const LoginScreen = () => {
         <Text style={styles.loginScreenDesc}>
           Введите номер телефона, чтобы войти или зарегистрироваться
         </Text>
-        <TextInput
+        <MaskInput
+          value={phone}
+          onChangeText={masked => {
+            setPhone(masked);
+            console.log(phone);
+          }}
+          mask={[
+            '+',
+            /\d/,
+            ' ',
+            /\d/,
+            /\d/,
+            /\d/,
+            ' ',
+            /\d/,
+            /\d/,
+            /\d/,
+            ' ',
+            /\d/,
+            /\d/,
+            ' ',
+            /\d/,
+            /\d/,
+          ]}
           style={styles.loginScreenInput}
           keyboardType="phone-pad"
           dataDetectorTypes="phoneNumber"
-          maxLength={14}
           placeholder="+7"
         />
       </View>
