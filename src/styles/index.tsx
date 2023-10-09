@@ -99,6 +99,45 @@ const styles = StyleSheet.create({
     fontWeight: '400',
   },
 
+  loginScreenInputError: {
+    marginTop: 20,
+    height: 56,
+    width: '100%',
+    backgroundColor: '#EDEDF4',
+    borderRadius: 12,
+    borderColor: '#E93963',
+    borderWidth: 1,
+    paddingHorizontal: 24,
+    paddingVertical: 16,
+    fontFamily: 'Lato',
+    fontSize: 18,
+    lineHeight: 24,
+    fontWeight: '400',
+  },
+
+  loginScreenError: {
+    color: '#E93963',
+    fontFamily: fonts.Lato,
+  },
+
+  sendOTPButtonActive: {
+    marginTop: sizing.s2,
+    padding: sizing.s2,
+    borderRadius: 1230,
+    width: '100%',
+    alignItems: 'center',
+    backgroundColor: colors.primary,
+  },
+
+  sendOTPButtonDisabled: {
+    marginTop: sizing.s2,
+    padding: sizing.s2,
+    borderRadius: 1230,
+    width: '100%',
+    alignItems: 'center',
+    backgroundColor: '#AFC0ED',
+  },
+
   /**
    * Generals
    */
