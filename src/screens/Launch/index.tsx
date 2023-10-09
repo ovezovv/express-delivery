@@ -1,10 +1,12 @@
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {ImageBackground, Pressable, Text, View} from 'react-native';
 import vectors from 'src/lib/helper/vectors';
 import styles from 'src/styles';
 import colors from 'src/styles/colors';
 
-const LaunchScreen = ({navigation}) => {
+const LaunchScreen = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -20,6 +22,7 @@ const LaunchScreen = ({navigation}) => {
         </Text>
         <Pressable
           style={styles.launchScreenButton}
+          //@ts-ignore
           onPress={() => navigation.navigate('Login')}>
           <Text style={{color: colors.white}}>Войти</Text>
         </Pressable>
